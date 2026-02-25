@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Infliq</title>
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="header-logo">
+                <a href="/"
+                    style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+                    <div class="infliq-logo-box small">
+                        <div class="infliq-logo-q"></div>
+                        <div class="infliq-logo-star">✦</div>
+                    </div>
+                    <h1 class="logo-text">Infliq</h1>
+                </a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="header-actions">
+                <button class="btn-login-small">Log In</button>
+                <button class="btn-signup-small">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="legal-container">
+        <h1>Contact Us</h1>
+        <p>If you have any questions, concerns, or feedback, we'd love to hear from you. Please use one of the methods
+            below to get in touch with our team.</p>
+
+        <div class="box" style="margin-top: 30px; text-align: left; align-items: flex-start; border-radius: 8px;">
+            <h3 style="margin-bottom: 20px;">Support Inquiry</h3>
+            <form id="contactForm" class="login-form" style="width: 100%;">
+                <input type="text" class="input-field" placeholder="Full Name" required>
+                <input type="email" class="input-field" placeholder="Email Address" required>
+                <textarea class="input-field" placeholder="How can we help you?"
+                    style="height: 120px; resize: vertical;" required></textarea>
+                <button type="submit" class="btn-login" id="contactSubmit" style="margin-top: 15px;">Send
+                    Message</button>
+            </form>
+
+            <div id="contactSuccess" style="display: none; width: 100%; text-align: center; padding: 20px 0;">
+                <div class="success-icon" style="font-size: 40px; margin-bottom: 10px;">✉️</div>
+                <h3>Message Sent!</h3>
+                <p style="color: #8e8e8e; font-size: 14px;">We've received your inquiry and will respond to your email
+                    shortly.</p>
+                <button class="btn-login" onclick="location.reload()"
+                    style="margin-top: 20px; width: auto; padding: 8px 20px;">Send another</button>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <h3>Other ways to reach us</h3>
+            <p style="margin-top: 15px;"><strong>Email:</strong> support@infliq.com</p>
+            <p><strong>Business Hours:</strong> Monday - Friday, 9:00 AM - 6:00 PM</p>
+        </div>
+
+        <div style="margin-top: 50px;">
+            <a href="/">Back to Home</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="/privacy-policy.html">Privacy Policy</a>
+            <a href="/terms-and-conditions.html">Terms & Conditions</a>
+            <a href="/contact-us.html">Contact Us</a>
+            <a href="/delete-account.html">Delete Account</a>
+        </div>
+        <div class="copyright">
+            &copy; 2026 INFLIQ FROM GOEXP
+        </div>
+    </footer>
+
+    <script type="module">
+        const form = document.getElementById('contactForm');
+        const success = document.getElementById('contactSuccess');
+        const btn = document.getElementById('contactSubmit');
+
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                btn.disabled = true;
+                btn.innerText = 'Sending...';
+
+                setTimeout(() => {
+                    form.style.display = 'none';
+                    success.style.display = 'block';
+                }, 1500);
+            });
+        }
+    </script>
+</body>
+
+</html>
